@@ -1,8 +1,8 @@
-# Uber Clone Web App
+# SwiftWheels
 
 ## Project Overview
 
-This project is an Uber clone web application designed to provide ride-sharing services. It is built using a microservices architecture and follows Agile development practices. The application will consist of multiple services including user management, ride management, driver management, and payment processing. The frontend will be developed using modern JavaScript frameworks.
+This project is an SwiftWheels application designed to provide ride-sharing services. It is built using a microservices architecture and follows Agile development practices. The application will consist of multiple services including user management, ride management, driver management, and payment processing. The frontend will be developed using modern JavaScript frameworks.
 
 ## Project Structure
 
