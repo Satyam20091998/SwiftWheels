@@ -1,6 +1,5 @@
 # SwiftWheels
 A platform to connect riders with drivers, similar to Uber
-# Ride Sharing Website Project (Uber-like)
 
 ## Overview
 This project aims to create a ride-sharing website, connecting riders with drivers. It allows users to register, book rides, and drivers to accept rides. The system will integrate Google Maps API for location tracking and routing.
