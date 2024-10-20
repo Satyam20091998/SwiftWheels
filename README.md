@@ -1,80 +1,150 @@
 # SwiftWheels
-A platform to connect riders with drivers, similar to Uber
 
-## Overview
-This project aims to create a ride-sharing website, connecting riders with drivers. It allows users to register, book rides, and drivers to accept rides. The system will integrate Google Maps API for location tracking and routing.
+## Project Overview
 
-## Project Goals
-- Develop a website similar to Uber, connecting riders with drivers.
-- Use Python (Flask/Django), Docker, and SQL databases.
-- Integrate Google Maps for route tracking and distance calculation.
-- Create a scalable backend with RESTful APIs for future mobile app development.
+This project is an SwiftWheels application designed to provide ride-sharing services. It is built using a microservices architecture and follows Agile development practices. The application will consist of multiple services including user management, ride management, driver management, and payment processing. The frontend will be developed using modern JavaScript frameworks.
 
-## Technologies Used
-- **Backend**: Python (Flask/Django)
-- **Frontend**: HTML, CSS, JavaScript (React.js/Angular.js)
-- **Database**: PostgreSQL/MySQL
-- **Containerization**: Docker
-- **Mapping**: Google Maps API
-- **Version Control**: GitHub
+## Project Structure
 
-## Roadmap
+The project is organized into multiple directories, each serving a specific purpose. Below is the complete structure of the project:
 
-### 1. Research
-- Choose appropriate backend and frontend technologies.
-- Investigate OAuth/JWT for authentication.
-- Research Stripe/PayPal for potential future payment integration.
+```
+uber-clone-web-app/
+│
+├── README.md                   # Project overview and setup instructions
+├── .gitignore                  # Specify files and directories to ignore
+├── LICENSE                     # License for the project
+│
+├── frontend/                   # Frontend application
+│   ├── package.json            # Frontend dependencies and scripts
+│   ├── package-lock.json       # Lock file for frontend dependencies
+│   ├── public/                 # Static assets (images, favicon, etc.)
+│   ├── src/                    # Main source directory for frontend code
+│   │   ├── components/         # Reusable React components
+│   │   ├── pages/              # Page components
+│   │   ├── services/           # API service calls
+│   │   ├── styles/             # CSS or styled components
+│   │   ├── App.js              # Main App component
+│   │   └── index.js            # Entry point for React application
+│   │
+│   └── ...                     # Other frontend files (tests, utils, etc.)
+│
+├── user-service/               # User microservice
+│   ├── Dockerfile               # Dockerfile for the user service
+│   ├── requirements.txt         # Python dependencies for user service
+│   ├── app/                    # Main application directory
+│   │   ├── __init__.py         # Package initialization
+│   │   ├── models.py           # Database models
+│   │   ├── routes.py           # API routes
+│   │   ├── controllers.py      # Business logic
+│   │   ├── utils.py            # Utility functions
+│   │   └── config.py           # Configuration settings
+│   │
+│   └── tests/                  # Tests for the user service
+│       ├── test_models.py      # Tests for models
+│       ├── test_routes.py      # Tests for API routes
+│       └── ...                 # Other test files
+│
+├── ride-service/               # Ride microservice
+│   ├── Dockerfile               # Dockerfile for the ride service
+│   ├── requirements.txt         # Python dependencies for ride service
+│   ├── app/                    # Main application directory
+│   │   ├── __init__.py         # Package initialization
+│   │   ├── models.py           # Database models
+│   │   ├── routes.py           # API routes
+│   │   ├── controllers.py      # Business logic
+│   │   ├── utils.py            # Utility functions
+│   │   └── config.py           # Configuration settings
+│   │
+│   └── tests/                  # Tests for the ride service
+│       ├── test_models.py      # Tests for models
+│       ├── test_routes.py      # Tests for API routes
+│       └── ...                 # Other test files
+│
+├── driver-service/             # Driver microservice
+│   ├── Dockerfile               # Dockerfile for the driver service
+│   ├── requirements.txt         # Python dependencies for driver service
+│   ├── app/                    # Main application directory
+│   │   ├── __init__.py         # Package initialization
+│   │   ├── models.py           # Database models
+│   │   ├── routes.py           # API routes
+│   │   ├── controllers.py      # Business logic
+│   │   ├── utils.py            # Utility functions
+│   │   └── config.py           # Configuration settings
+│   │
+│   └── tests/                  # Tests for the driver service
+│       ├── test_models.py      # Tests for models
+│       ├── test_routes.py      # Tests for API routes
+│       └── ...                 # Other test files
+│
+├── payment-service/            # Payment microservice
+│   ├── Dockerfile               # Dockerfile for the payment service
+│   ├── requirements.txt         # Python dependencies for payment service
+│   ├── app/                    # Main application directory
+│   │   ├── __init__.py         # Package initialization
+│   │   ├── models.py           # Database models
+│   │   ├── routes.py           # API routes
+│   │   ├── controllers.py      # Business logic
+│   │   ├── utils.py            # Utility functions
+│   │   └── config.py           # Configuration settings
+│   │
+│   └── tests/                  # Tests for the payment service
+│       ├── test_models.py      # Tests for models
+│       ├── test_routes.py      # Tests for API routes
+│       └── ...                 # Other test files
+│
+└── docker-compose.yml           # Docker Compose file for managing multiple services
+```
 
-### 2. Initial Setup
-- Set up a GitHub repository for collaboration.
-- Set up Docker with Python, Flask/Django, and the database.
-- Write a `Dockerfile` and `docker-compose.yml` for the app.
+## Getting Started
 
-### 3. System Design
-- **User Management**: Registration and login for riders and drivers.
-- **Ride Booking System**: Book and manage rides.
-- **Location Services**: Google Maps API for location tracking.
-- **Ride Matching Algorithm**: Basic logic for matching drivers with riders.
-- **Database**: Users, Rides, Transactions, Vehicles, Location logs.
-  
-### 4. Project Phases
-1. **Phase 1**: Setup backend and database with Docker.
-2. **Phase 2**: Implement ride booking and Google Maps integration.
-3. **Phase 3**: Testing and optimization.
-4. **Phase 4**: Collaboration using GitHub branches.
-5. **Phase 5**: Future expansion into mobile apps.
+### Prerequisites
 
-### 5. Database and Backend Storage
-- Use SQL with Docker to manage user and ride data.
-- Implement RESTful APIs for interaction with the frontend.
+- Python 3.x
+- Node.js and npm (for frontend)
+- Docker and Docker Compose (for containerization)
 
-### 6. Git Workflow
-- Use `feature` branches for development.
-- Regular code reviews to ensure quality and prevent bugs.
+### Installation
 
-## Week-by-Week Plan
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Satyam20091998/SwiftWheels.git
+   cd SwiftWheels
+   ```
 
-### Week 1-2: Backend Setup
-- Set up Docker and Python backend.
-- Create RESTful API endpoints for user management.
-- Design the database schema.
+2. Set up the frontend:
+   ```bash
+   cd frontend
+   npm install
+   ```
 
-### Week 3-4: Google Maps Integration
-- Add Google Maps for location and routes.
-- Implement ride-matching logic.
+3. Set up each microservice:
+   - Navigate to each service directory (e.g., `user-service`, `ride-service`, etc.) and install the required packages using:
+     ```bash
+     pip install -r requirements.txt
+     ```
 
-### Week 5-6: Frontend & Testing
-- Create the frontend for ride booking.
-- Conduct full tests on user flows.
-- Use Docker for local deployment and testing.
+4. Run the application using Docker Compose:
+   ```bash
+   docker-compose up
+   ```
 
-## How to Run the Project
-1. Clone the repository.
-2. Set up Docker.
-3. Use `docker-compose up` to start the backend and database.
-4. Access the frontend on `localhost`.
+## License
 
-## Future Plans
-- Add a mobile app using Flutter or React Native.
-- Integrate payment options for seamless transactions.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## Contributing
+
+Contributions are welcome! Please feel free to submit a pull request or open an issue if you have any suggestions or improvements.
+
+```
+
+### Instructions to Use the README.md
+
+1. **Copy the Content:** Copy the above content into a new file named `README.md`.
+
+2. **Modify as Needed:** Replace any placeholder text, such as `yourusername`, with your actual GitHub username or any other relevant information.
+
+3. **Save the File:** Save the `README.md` file in the root directory of your project structure.
+
+This `README.md` file provides an overview of the project, outlines its structure, and gives instructions for installation and setup. Let me know if you need any adjustments or additional sections!
