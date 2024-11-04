@@ -41,6 +41,14 @@ services:
     networks:
       - swiftwheels-network
 
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"  # Change 3000 to the port your frontend uses
+    networks:
+      - swiftwheels-network
+
   db:
     image: postgres:latest
     environment:
