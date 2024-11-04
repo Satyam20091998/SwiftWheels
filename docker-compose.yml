@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  user-service:
+    build: ./user-service
+    container_name: user_service
+    ports:
+      - "5001:5001"
+    environment:
+      - DATABASE_URL=<your-database-url>
+    depends_on:
+      - db
+    networks:
+      - swiftwheels-network
+
+  ride-service:
+    build: ./ride-service
+    container_name: ride_service
+    ports:
+      - "5002:5002"
+    depends_on:
+      - db
+    networks:
+      - swiftwheels-network
+
+  driver-service:
+    build: ./driver-service
+    container_name: driver_service
+    ports:
+      - "5003:5003"
+    depends_on:
+      - db
+    networks:
+      - swiftwheels-network
+
+  payment-service:
+    build: ./payment-service
+    container_name: payment_service
+    ports:
+      - "5004:5004"
+    networks:
+      - swiftwheels-network
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: swiftwheels
+    ports:
+      - "5432:5432"
+    networks:
+      - swiftwheels-network
+
+networks:
+  swiftwheels-network:
+    driver: bridge
