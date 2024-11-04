@@ -15,7 +15,8 @@ uber-clone-web-app/
 ├── .gitignore                  # Specify files and directories to ignore
 ├── LICENSE                     # License for the project
 │
-├── frontend/                   # Frontend application
+├── frontend/    
+    ├── Dockerfile                # Frontend application
 │   ├── package.json            # Frontend dependencies and scripts
 │   ├── package-lock.json       # Lock file for frontend dependencies
 │   ├── public/                 # Static assets (images, favicon, etc.)
