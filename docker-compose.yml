@@ -45,20 +45,23 @@ services:
     build:
       context: ./frontend
     ports:
-      - "3000:3000"  # Change 3000 to the port your frontend uses
+      - "3000:3000"  # Ensure this port is open and not conflicting
     networks:
       - swiftwheels-network
 
   db:
-    image: postgres:latest
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: swiftwheels
-    ports:
-      - "5432:5432"
-    networks:
-      - swiftwheels-network
+   image: postgres:latest
+   environment:
+     POSTGRES_USER: user
+     POSTGRES_PASSWORD: password
+     POSTGRES_DB: swiftwheels
+   ports:
+     - "5432:5432"
+   volumes:
+     - ./db/init-scripts:/docker-entrypoint-initdb.d
+   networks:
+    - swiftwheels-network
+
 
 networks:
   swiftwheels-network:
